@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Correct</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="box center">
+    <h1 class="title">Good job! 🎉</h1>
+
+    <p class="lead"><strong>YOU FOUND ALL FIVE HIDDEN SCROLLS!</strong></p>
+
+    <div class="stack">
+      <button class="btn-blue" type="button" id="bonusBtn">
+        CLAIM YOUR BONUS
+      </button>
+    </div>
+
+    <p class="lead"><strong>
+      If you enjoyed the book and the Scroll challenge, please consider leaving an honest review on Amazon.<br>
+      I would sincerely appreciate it. THANK YOU!
+    </strong></p>
+
+    <div class="stack">
+      <button class="btn-blue" type="button" id="reviewBtn">
+        LEAVE AN AMAZON REVIEW
+      </button>
+    </div>
+  </main>
+
+  <script>
+    window.REVIEW_LINK = "https://www.amazon.com/review/create-review/ref=cm_cr_othr_d_wr_but_top?ie=UTF8&channel=glance-detail&asin=TODO";
+
+    document.getElementById('bonusBtn').addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.href = "search-and-find-color.pdf";
+      link.download = "search-and-find-color.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
