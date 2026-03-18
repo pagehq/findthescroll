@@ -1,0 +1,158 @@
+:root{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+
+body{
+  margin:0;
+  padding:16px;
+  background:#f6f7fb;
+  color:#111;
+  display:flex;
+  justify-content:center;
+}
+
+/* Layout container (shared) */
+.box{
+  width:min(920px,100%);
+  background:#fff;
+  border:1px solid #e6e8ef;
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 8px 30px rgba(0,0,0,.06);
+}
+
+.title{
+  margin:0 0 14px;
+  text-align:center;
+  font-size:32px;
+  line-height:1.15;
+  font-weight:900;
+}
+
+/* INDEX (grid) */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:10px;
+}
+
+.cell{
+  border:1px solid #e9ebf2;
+  border-radius:12px;
+  padding:10px;
+  background:#fafbff;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  min-height:46px;
+  cursor:pointer;
+  user-select:none;
+}
+
+.cell input{
+  width:18px;
+  height:18px;
+  accent-color:#111;
+  flex:0 0 auto;
+}
+
+.cell span{
+  font-size:14px;
+  line-height:1.2;
+  word-break:break-word;
+}
+
+.cell strong{
+  font-weight:800;
+}
+
+.actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-top:16px;
+}
+
+/* Buttons */
+button,
+.btn-blue{
+  border:0;
+  border-radius:12px;
+  padding:12px 18px;
+  font-weight:800;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+}
+
+button:active,
+.btn-blue:active{
+  transform:translateY(1px);
+}
+
+/* Index SEND button (green) */
+button{
+  background:#16a34a;
+  color:#fff;
+}
+
+button:hover{
+  background:#15803d;
+}
+
+/* CORRECT buttons (blue) */
+.center{
+  text-align:center;
+}
+
+.lead{
+  margin:8px auto 14px;
+  color:#444;
+  font-size:16px;
+  line-height:1.4;
+  max-width:46ch;
+}
+
+.stack{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-items:center;
+  margin:10px 0 8px;
+}
+
+.btn-blue{
+  background:#2563eb;
+  color:#fff;
+  min-width:260px;
+}
+
+.btn-blue:hover{
+  background:#1d4ed8;
+}
+
+.small{
+  margin:10px auto 0;
+  color:#555;
+  font-size:13px;
+  line-height:1.4;
+  max-width:52ch;
+}
+
+/* Responsive */
+@media (max-width:620px){
+  .grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  button,
+  .btn-blue{
+    width:100%;
+  }
+
+  .btn-blue{
+    min-width:0;
+  }
+}
