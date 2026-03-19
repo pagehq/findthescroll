@@ -23,7 +23,7 @@ const ITEMS = [
   "Skull Island","Wizard Tower","Necro Graveyard","Deep Cavern","Dwarven Forge","Tavern"
 ];
 
-const CORRECT_SET = ["TODO","TODO","TODO","TODO","TODO"];
+const CORRECT_SET = ["Elfen Haven","Golem Fortress","Bone Desert","Mystic Maze","Beast Land","Tavern"];
 const CORRECT_URL = "correct.html";
 const WRONG_URL = "wrong.html";
 
