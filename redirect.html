@@ -9,31 +9,28 @@
   <script>
     const targetUrl = "https://example.com";
     const webhook = "https://hook.eu2.make.com/g8lpeddzq9hhk7brsoja1dvd9pha6aqq";
+    const event = "qr_scan"; // <-- EVENTO
 
-    // Tracciamento
     fetch(webhook, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
+        event: event,
         timestamp: new Date().toISOString(),
         userAgent: navigator.userAgent
       })
     }).catch(() => {});
 
-    // Imposta meta redirect
     document.getElementById("redirect-meta")
       .setAttribute("content", "0; url=" + targetUrl);
 
-    // Redirect immediato
     window.location.replace(targetUrl);
   </script>
 </head>
 <body>
-  <p>
-    <a id="link">Click Here.</a>
-  </p>
+  <p><a id="link">Click Here.</a></p>
 
   <script>
     document.getElementById("link").href = targetUrl;
