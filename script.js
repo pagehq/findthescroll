@@ -1,4 +1,4 @@
-const WEBHOOK_URL = "https://hook.eu2.make.com/g8lpeddzq9hhk7brsoja1dvd9pha6aqq";
+const WEBHOOK_URL = "https://hook.eu2.make.com/g8lpeddzq9hhk7brsoja1dvd9pha6aqq"; 
 
 // ---------- Shared ----------
 function track(payload) {
