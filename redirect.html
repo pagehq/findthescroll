@@ -4,13 +4,31 @@
   <meta charset="UTF-8">
   <title>Redirect</title>
 
+  <meta id="redirect-meta" http-equiv="refresh" content="0">
+
   <script>
-    const url = "https://example.com";
+    const targetUrl = "https://example.com";
+    const webhook = "https://hook.eu2.make.com/g8lpeddzq9hhk7brsoja1dvd9pha6aqq";
 
-    window.location.href = url;
+    // Tracciamento
+    fetch(webhook, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent
+      })
+    }).catch(() => {});
+
+    // Imposta meta redirect
+    document.getElementById("redirect-meta")
+      .setAttribute("content", "0; url=" + targetUrl);
+
+    // Redirect immediato
+    window.location.replace(targetUrl);
   </script>
-
-  <meta http-equiv="refresh" content="0; url=https://example.com">
 </head>
 <body>
   <p>
@@ -18,7 +36,7 @@
   </p>
 
   <script>
-    document.getElementById("link").href = url;
+    document.getElementById("link").href = targetUrl;
   </script>
 </body>
 </html>
